@@ -2,32 +2,21 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
+i = Image.open("../imagenesSalida/umbral.jpg")
+pixels = i.load()
+array = []
+width, height = i.size
+
+
+for x in range(width):
+    for y in range(height):
+        r, g, b = pixels[x,y]
+        array.append(r)
+
+# print(array)
 #plt.plot([1,2,3,4])
-#plt.hist([1,2,3], 20)
-plt.hist(5, 1)
+plt.hist(array, 100)
+
 plt.ylabel("some numbers")
 plt.grid(True)
 plt.show()
-
-# #i = Image.open("../pokemon.jpg")
-
-# import numpy as np
-# import matplotlib.pyplot as plt
-#
-# # Fixing random state for reproducibility
-# np.random.seed(19680801)
-#
-# mu, sigma = 100, 15
-# x = mu + sigma * np.random.randn(10000)
-#
-# # the histogram of the data
-# n, bins, patches = plt.hist(x, 20, normed=1, facecolor='g', alpha=0.75)
-#
-#
-# plt.xlabel('Smarts')
-# plt.ylabel('Probability')
-# plt.title('Histogram of IQ')
-# plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
-# plt.axis([40, 160, 0, 0.03])
-# plt.grid(True)
-# plt.show()
