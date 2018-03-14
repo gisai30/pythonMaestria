@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
-i = Image.open("../imagenesSalida/umbral.jpg")
+i = Image.open("../anime.jpg")
 pixels = i.load()
 array = []
 width, height = i.size
@@ -15,7 +15,7 @@ for x in range(width):
 
 # print(array)
 #plt.plot([1,2,3,4])
-plt.hist(array, 100)
+plt.hist(array, 255)
 
 plt.ylabel("some numbers")
 plt.grid(True)
